@@ -1,0 +1,29 @@
+# Bank Account Transaction Summary
+
+## Project Overview
+This project demonstrates how to manage and analyze bank account transactions using SQL. It includes depositing and withdrawing money, and calculating total deposits, withdrawals, and the resulting balance for each account.
+
+## Dataset
+The dataset contains transaction records for multiple bank accounts.
+
+**Table Name:** `Transactions`
+
+| Column Name        | Data Type     | Description                        |
+|--------------------|---------------|----------------------------------|
+| AccountNumber      | INTEGER       | Unique identifier for each account|
+| AccountHolderName  | VARCHAR(100)  | Name of the account holder        |
+| TransactionDate    | DATE          | Date of the transaction           |
+| TransactionType    | VARCHAR(20)   | Type of transaction (Deposit or Withdrawal) |
+| TransactionAmount  | NUMERIC(10,2) | Amount involved in the transaction|
+
+## SQL Queries
+
+### Create the Table
+```sql
+CREATE TABLE "Transactions" (
+    "AccountNumber" INTEGER,
+    "AccountHolderName" VARCHAR(100),
+    "TransactionDate" DATE,
+    "TransactionType" VARCHAR(20),
+    "TransactionAmount" NUMERIC(10, 2)
+);
