@@ -1,16 +1,16 @@
-# SQL Project 1: Average Selling Price by Product
+#SQL Project 1: Average Selling Price by Product
 
-##  Project Overview
+##Project Overview
 This project focuses on calculating the **average selling price** of products from a sales dataset.  
 Using the `GROUP BY` clause, we aggregate the prices for each product to find their average selling price.
 
-##  Dataset
+##Dataset
 The dataset contains the following columns:
 - **ProductID** – Unique identifier for each product.
 - **ProductName** – Name of the product.
 - **SellingPrice** – Selling price of the product.
 
-### Sample Data
+###Sample Data
 | ProductID | ProductName | SellingPrice |
 |-----------|-------------|--------------|
 | 1         | Product A   | 100.00       |
@@ -21,9 +21,10 @@ The dataset contains the following columns:
 | 1         | Product A   | 90.00        |
 | 3         | Product C   | 210.00       |
 
-##  SQL Query
+##SQL Query
 ```sql
 SELECT ProductName, 
        AVG(SellingPrice) AS average_selling_price
 FROM product
 GROUP BY ProductName;
+
