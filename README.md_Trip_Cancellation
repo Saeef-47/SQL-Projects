@@ -1,0 +1,46 @@
+# Trip Cancellation Rate Analysis for Active Clients
+
+## Project Overview
+This project analyzes trip cancellation rates for active (non-banned) clients in a ride-hailing service.  
+It calculates the daily cancellation rate by dividing the number of cancelled trips by the total trips requested per day.
+
+## Dataset
+
+### Users Table
+
+| Column Name | Data Type   | Description                       |
+|-------------|-------------|---------------------------------|
+| users_id    | INT         | Unique user identifier           |
+| banned      | VARCHAR(5)  | Indicates if user is banned ('Yes' or 'No') |
+| role        | VARCHAR(10) | Role of the user (e.g., client, driver) |
+
+### Trips Table
+
+| Column Name | Data Type   | Description                       |
+|-------------|-------------|---------------------------------|
+| id          | INT         | Unique trip identifier           |
+| client_id   | INT         | Foreign key referencing Users (clients) |
+| driver_id   | INT         | Foreign key referencing Users (drivers) |
+| city_id     | INT         | Identifier for the city          |
+| status      | VARCHAR(30) | Trip status (e.g., completed, cancelled_by_driver) |
+| request_at  | DATE        | Date of the trip request         |
+
+## SQL Queries
+
+###  Create Users Table and Insert Data
+```sql
+CREATE TABLE Users (
+    users_id INT,
+    banned VARCHAR(5),
+    role VARCHAR(10)
+);
+
+INSERT INTO Users (users_id, banned, role) VALUES
+(1, 'No', 'client'),
+(2, 'Yes', 'client'),
+(3, 'No', 'client'),
+(4, 'No', 'client'),
+(10, 'No', 'driver'),
+(11, 'No', 'driver'),
+(12, 'No', 'driver'),
+(13, 'No', 'driver');
