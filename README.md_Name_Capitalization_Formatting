@@ -1,0 +1,25 @@
+# Name Capitalization Formatting 
+
+## Project Overview
+This project demonstrates how to standardize the capitalization of names stored in a database using SQL's `INITCAP()` function.  
+It converts names with mixed or inconsistent cases into proper case format, enhancing data consistency.
+
+## Dataset
+
+### Names Table
+
+| Column Name | Data Type    | Description          |
+|-------------|--------------|----------------------|
+| Name        | VARCHAR(100) | Name of the person (mixed case) |
+
+## SQL Queries
+
+###  Create Names Table and Insert Sample Data
+```sql
+CREATE TABLE "Names" ("Name" VARCHAR(100));
+
+INSERT INTO "Names" ("Name") VALUES
+('rAVI kUMAR'),
+('priya sharma'),
+('amit PATEL'),
+('NEHA gupta');
