@@ -1,0 +1,42 @@
+# Social Media Post Engagement Analysis
+
+## Project Overview
+This project analyzes user reactions on social media posts to measure engagement.  
+It counts likes, comments, and shares per post, calculates average reactions per user per day, and identifies the top engaging posts within a timeframe.
+
+## Dataset
+
+### Posts Table
+
+| Column Name   | Data Type          | Description                   |
+|---------------|--------------------|-------------------------------|
+| post_id       | INTEGER (Primary Key) | Unique identifier for each post |
+| post_content  | TEXT               | Content of the post           |
+| post_date     | TIMESTAMP          | Date and time the post was made|
+
+### UserReactions Table
+
+| Column Name    | Data Type          | Description                   |
+|----------------|--------------------|-------------------------------|
+| reaction_id    | INTEGER (Primary Key) | Unique identifier for each reaction |
+| user_id        | INTEGER            | Unique identifier for the user|
+| post_id        | INTEGER            | Foreign key referencing Posts |
+| reaction_type  | VARCHAR(10)        | Type of reaction (like, comment, share) |
+| reaction_date  | TIMESTAMP          | Date and time of the reaction |
+
+## SQL Queries
+
+### Create Posts Table and Insert Data
+```sql
+CREATE TABLE Posts (
+    post_id INTEGER PRIMARY KEY,
+    post_content TEXT,
+    post_date TIMESTAMP
+);
+
+INSERT INTO Posts (post_id, post_content, post_date) VALUES
+(1, 'Lorem ipsum dolor sit amet', '2023-08-25 10:00:00'),
+(2, 'Exploring the beauty of nature', '2023-08-26 15:30:00'),
+(3, 'Unveiling the latest tech trends', '2023-08-27 12:00:00'),
+(4, 'Journey into the world of literature', '2023-08-28 09:45:00'),
+(5, 'Capturing the essence of city life', '2023-08-29 16:20:00');
