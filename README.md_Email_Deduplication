@@ -1,0 +1,35 @@
+# Email Deduplication and Data Cleaning
+
+## Project Overview
+This project demonstrates how to remove duplicate records from a table based on email addresses using SQL window functions.  
+It uses `ROW_NUMBER()` to identify duplicates and deletes all but the first occurrence, ensuring clean and unique email data.
+
+## Dataset
+
+### Emails Table
+
+| Column Name | Data Type       | Description                  |
+|-------------|-----------------|------------------------------|
+| id          | INTEGER (Primary Key) | Unique record identifier     |
+| name        | VARCHAR(50)     | Name of the person           |
+| email       | VARCHAR(100)    | Email address (may have duplicates) |
+| phone       | VARCHAR(20)     | Phone number                 |
+
+## SQL Queries
+
+###  Create Emails Table and Insert Sample Data
+```sql
+CREATE TABLE Emails (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100),
+    phone VARCHAR(20)
+);
+
+INSERT INTO Emails (id, name, email, phone) VALUES
+(1, 'Rahul', 'rahul@exmple.com', '9839473902'),
+(2, 'Rohit', 'rohit@example.com', '9883782971'),
+(3, 'Suresh', 'rahul@exmple.com', '7654321098'),
+(4, 'Manish', 'manish@example.com', '8927394619'),
+(5, 'Amit', 'amit@example.com', '9399303840'),
+(6, 'Rahul', 'rahul@exmple.com', '9737466147');
