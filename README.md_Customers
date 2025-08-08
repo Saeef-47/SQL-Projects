@@ -1,0 +1,36 @@
+# Customers Without Orders SQL Query
+
+## Project Overview
+This project demonstrates how to identify customers who have **not placed any orders** using SQL.  
+It uses a `LEFT JOIN` to find records in the `Customer` table that do not have corresponding entries in the `Orders` table.
+
+## Dataset
+
+### Customers Table
+
+| Column Name | Data Type     | Description               |
+|-------------|---------------|---------------------------|
+| id          | INT           | Unique customer identifier|
+| name        | VARCHAR(50)   | Customer's name           |
+
+### Orders Table
+
+| Column Name  | Data Type | Description                        |
+|--------------|-----------|----------------------------------|
+| id           | INT       | Unique order identifier           |
+| customerId   | INT       | Foreign key referencing customer  |
+
+## SQL Queries
+
+###  Create Customers Table and Insert Data
+```sql
+CREATE TABLE Customer (
+    id INT,
+    "name" VARCHAR(50)
+);
+
+INSERT INTO Customer (id, "name") VALUES
+(1, 'Joe'),
+(2, 'Henry'),
+(3, 'Sam'),
+(4, 'Max');
